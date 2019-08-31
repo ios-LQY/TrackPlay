@@ -7,9 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "TrajectoryController.h"
+#import <BaiduMapAPI_Base/BMKMapManager.h>
+#import <BMKLocationKit/BMKLocationAuth.h>
 
+#define kBMKMapKey @"Brv47wOyfn2nzhBGCQGu7q5FbIpOo3PC"
 @interface AppDelegate ()
-
+{
+    BMKMapManager *_mapManager;
+}
 @end
 
 @implementation AppDelegate
@@ -17,6 +23,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    
+    TrajectoryController *viewController = [[TrajectoryController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navi;
+    
+    self.window.backgroundColor = [UIColor groupTableViewBackgroundColor];
+
+    [self.window makeKeyAndVisible];
+    
+    //百度地图
+    _mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [_mapManager start:kBMKMapKey generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
+    //百度地图定位
+    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:kBMKMapKey authDelegate:self];
+    
     return YES;
 }
 

@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6929415F231A00960072B6CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6929415E231A00960072B6CE /* AppDelegate.m */; };
-		69294162231A00960072B6CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69294161231A00960072B6CE /* ViewController.m */; };
-		69294165231A00960072B6CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69294163231A00960072B6CE /* Main.storyboard */; };
 		69294167231A00980072B6CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69294166231A00980072B6CE /* Assets.xcassets */; };
 		6929416A231A00980072B6CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69294168231A00980072B6CE /* LaunchScreen.storyboard */; };
 		6929416D231A00980072B6CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6929416C231A00980072B6CE /* main.m */; };
 		69294177231A00980072B6CE /* LQYTrackPlayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69294176231A00980072B6CE /* LQYTrackPlayTests.m */; };
 		69294182231A00980072B6CE /* LQYTrackPlayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69294181231A00980072B6CE /* LQYTrackPlayUITests.m */; };
+		69294192231A016C0072B6CE /* TrajectoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6929418F231A016B0072B6CE /* TrajectoryController.m */; };
+		69294193231A016C0072B6CE /* TrajectoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69294190231A016B0072B6CE /* TrajectoryController.xib */; };
+		69294196231A04950072B6CE /* SportAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69294194231A04950072B6CE /* SportAnnotationView.m */; };
+		69294199231A04A80072B6CE /* SportNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 69294197231A04A80072B6CE /* SportNode.m */; };
+		692941A2231A07B90072B6CE /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 692941A1231A07B80072B6CE /* API.m */; };
+		692941A4231A0B110072B6CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692941A3231A0B110072B6CE /* CoreGraphics.framework */; };
+		692941E5231A147C0072B6CE /* LQYSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 692941E3231A147B0072B6CE /* LQYSlider.m */; };
+		692941F3231A21030072B6CE /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 692941F2231A21030072B6CE /* Dialog.m */; };
+		A31DB56F5BAD17E1CAA376EB /* libPods-LQYTrackPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C79277101C680A160F499C /* libPods-LQYTrackPlay.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28C79277101C680A160F499C /* libPods-LQYTrackPlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LQYTrackPlay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4997FE433C8CFC211D9DFB5D /* Pods-LQYTrackPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LQYTrackPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LQYTrackPlay/Pods-LQYTrackPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		4F130A79D9855E713D5CA94C /* Pods-LQYTrackPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LQYTrackPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-LQYTrackPlay/Pods-LQYTrackPlay.release.xcconfig"; sourceTree = "<group>"; };
 		6929415A231A00960072B6CE /* LQYTrackPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LQYTrackPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929415D231A00960072B6CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6929415E231A00960072B6CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		69294160231A00960072B6CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		69294161231A00960072B6CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		69294164231A00960072B6CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69294166231A00980072B6CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69294169231A00980072B6CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6929416B231A00980072B6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +58,20 @@
 		6929417D231A00980072B6CE /* LQYTrackPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LQYTrackPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69294181231A00980072B6CE /* LQYTrackPlayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LQYTrackPlayUITests.m; sourceTree = "<group>"; };
 		69294183231A00980072B6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6929418F231A016B0072B6CE /* TrajectoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryController.m; sourceTree = "<group>"; };
+		69294190231A016B0072B6CE /* TrajectoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrajectoryController.xib; sourceTree = "<group>"; };
+		69294191231A016B0072B6CE /* TrajectoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryController.h; sourceTree = "<group>"; };
+		69294194231A04950072B6CE /* SportAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportAnnotationView.m; sourceTree = "<group>"; };
+		69294195231A04950072B6CE /* SportAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportAnnotationView.h; sourceTree = "<group>"; };
+		69294197231A04A80072B6CE /* SportNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportNode.m; sourceTree = "<group>"; };
+		69294198231A04A80072B6CE /* SportNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportNode.h; sourceTree = "<group>"; };
+		692941A0231A07B80072B6CE /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		692941A1231A07B80072B6CE /* API.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		692941A3231A0B110072B6CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		692941E3231A147B0072B6CE /* LQYSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQYSlider.m; sourceTree = "<group>"; };
+		692941E4231A147B0072B6CE /* LQYSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQYSlider.h; sourceTree = "<group>"; };
+		692941F1231A21030072B6CE /* Dialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dialog.h; sourceTree = "<group>"; };
+		692941F2231A21030072B6CE /* Dialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dialog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692941A4231A0B110072B6CE /* CoreGraphics.framework in Frameworks */,
+				A31DB56F5BAD17E1CAA376EB /* libPods-LQYTrackPlay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E118E3F548EC6147C0AAF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				692941A3231A0B110072B6CE /* CoreGraphics.framework */,
+				28C79277101C680A160F499C /* libPods-LQYTrackPlay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BE8E03068FA404567C57331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4997FE433C8CFC211D9DFB5D /* Pods-LQYTrackPlay.debug.xcconfig */,
+				4F130A79D9855E713D5CA94C /* Pods-LQYTrackPlay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		69294151231A00960072B6CE = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +126,8 @@
 				69294175231A00980072B6CE /* LQYTrackPlayTests */,
 				69294180231A00980072B6CE /* LQYTrackPlayUITests */,
 				6929415B231A00960072B6CE /* Products */,
+				1BE8E03068FA404567C57331 /* Pods */,
+				05E118E3F548EC6147C0AAF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +144,14 @@
 		6929415C231A00960072B6CE /* LQYTrackPlay */ = {
 			isa = PBXGroup;
 			children = (
+				6929419F231A07550072B6CE /* Tool */,
+				6929419B231A04C50072B6CE /* Model */,
+				6929419A231A04B60072B6CE /* View */,
 				6929415D231A00960072B6CE /* AppDelegate.h */,
 				6929415E231A00960072B6CE /* AppDelegate.m */,
-				69294160231A00960072B6CE /* ViewController.h */,
-				69294161231A00960072B6CE /* ViewController.m */,
-				69294163231A00960072B6CE /* Main.storyboard */,
+				69294191231A016B0072B6CE /* TrajectoryController.h */,
+				6929418F231A016B0072B6CE /* TrajectoryController.m */,
+				69294190231A016B0072B6CE /* TrajectoryController.xib */,
 				69294166231A00980072B6CE /* Assets.xcassets */,
 				69294168231A00980072B6CE /* LaunchScreen.storyboard */,
 				6929416B231A00980072B6CE /* Info.plist */,
@@ -132,6 +178,37 @@
 			path = LQYTrackPlayUITests;
 			sourceTree = "<group>";
 		};
+		6929419A231A04B60072B6CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69294195231A04950072B6CE /* SportAnnotationView.h */,
+				69294194231A04950072B6CE /* SportAnnotationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6929419B231A04C50072B6CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69294198231A04A80072B6CE /* SportNode.h */,
+				69294197231A04A80072B6CE /* SportNode.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6929419F231A07550072B6CE /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				692941E4231A147B0072B6CE /* LQYSlider.h */,
+				692941E3231A147B0072B6CE /* LQYSlider.m */,
+				692941A0231A07B80072B6CE /* API.h */,
+				692941A1231A07B80072B6CE /* API.m */,
+				692941F1231A21030072B6CE /* Dialog.h */,
+				692941F2231A21030072B6CE /* Dialog.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69294186231A00980072B6CE /* Build configuration list for PBXNativeTarget "LQYTrackPlay" */;
 			buildPhases = (
+				70F7332466FAF7939B4281E2 /* [CP] Check Pods Manifest.lock */,
 				69294156231A00960072B6CE /* Sources */,
 				69294157231A00960072B6CE /* Frameworks */,
 				69294158231A00960072B6CE /* Resources */,
+				2A7B023D87F6C7AE0305057B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69294193231A016C0072B6CE /* TrajectoryController.xib in Resources */,
 				6929416A231A00980072B6CE /* LaunchScreen.storyboard in Resources */,
 				69294167231A00980072B6CE /* Assets.xcassets in Resources */,
-				69294165231A00960072B6CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +336,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A7B023D87F6C7AE0305057B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LQYTrackPlay/Pods-LQYTrackPlay-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
+				"${PODS_ROOT}/PGDatePicker/PGDatePicker/PGDatePicker.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PGDatePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LQYTrackPlay/Pods-LQYTrackPlay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70F7332466FAF7939B4281E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LQYTrackPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69294156231A00960072B6CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69294162231A00960072B6CE /* ViewController.m in Sources */,
+				692941A2231A07B90072B6CE /* API.m in Sources */,
+				692941E5231A147C0072B6CE /* LQYSlider.m in Sources */,
+				69294192231A016C0072B6CE /* TrajectoryController.m in Sources */,
+				692941F3231A21030072B6CE /* Dialog.m in Sources */,
+				69294196231A04950072B6CE /* SportAnnotationView.m in Sources */,
 				6929416D231A00980072B6CE /* main.m in Sources */,
+				69294199231A04A80072B6CE /* SportNode.m in Sources */,
 				6929415F231A00960072B6CE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,14 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		69294163231A00960072B6CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				69294164231A00960072B6CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		69294168231A00980072B6CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,11 +560,13 @@
 		};
 		69294187231A00980072B6CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4997FE433C8CFC211D9DFB5D /* Pods-LQYTrackPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6TV4MNK44;
 				INFOPLIST_FILE = LQYTrackPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,11 +579,13 @@
 		};
 		69294188231A00980072B6CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F130A79D9855E713D5CA94C /* Pods-LQYTrackPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6TV4MNK44;
 				INFOPLIST_FILE = LQYTrackPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
