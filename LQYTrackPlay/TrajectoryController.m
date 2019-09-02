@@ -391,79 +391,17 @@ static NSString *annotationViewIdentifier = @"com.Baidu.BMKPointAnnotation";
 
 
 #pragma mark - load data
-- (void)getToken
-{
-    [Dialog loading];
-    NSString *user_pwd_md5 = [self md5HexDigest:@"a123456"];
-    NSDictionary *dic = @{@"user_id":@"zjymwl",
-                          @"user_pwd_md5":user_pwd_md5,
-                          @"expires_in":@"60"
-                          };
-    NSMutableDictionary *mutDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    //url处理
-    //    NSString *url = @"http://open.aichezaixian.com/route/rest";
-    NSString *method = @"jimi.oauth.token.get";
-    API *api = [API new];
-    [api requestCarTest:mutDic method:method completion:^(id data) {
-        if ([data[@"code"] intValue] == 0) {
-
-            [self loadSportNodes:data[@"result"][@"accessToken"]];
-        }else{
-            [Dialog showInfo:data[@"message"]];
-        }
-    }];
-
-}
-//MARK - md5加密
-- (NSString *) md5HexDigest:(NSString *)str
-{
-    const char *original_str = [str UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(original_str, strlen(original_str), result);
-    NSMutableString *hash = [NSMutableString string];
-    for (int i = 0; i < 16; i++)
-        [hash appendFormat:@"%02X", result[i]];
-    return [hash uppercaseString];
-}
-
-- (void)loadSportNodes:(NSString *)token
+- (void)loadData
 {
     self.sportNodes = [NSMutableArray array];
-    
-    NSDictionary *dic = @{@"access_token":token,
-                          @"imei":IMEI,
-                          @"begin_time":self.startTimeLabel.text,
-                          @"end_time":self.endTimeLabel.text,
-                          @"map_type":@"BAIDU"
-                          };
-    NSMutableDictionary *mutDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    //url处理
-    NSString *method = @"jimi.device.track.list";
-    API *api = [API new];
-    [api requestCarTest:mutDic method:method completion:^(id data) {
-        [Dialog dismiss];
-        if ([data[@"code"] intValue] == 0) {
-            NSArray *dataArray = data[@"result"];
-            if (dataArray.count > 0) {
-                CLLocationCoordinate2D coords = CLLocationCoordinate2DMake([dataArray[0][@"lat"] floatValue],[dataArray[0][@"lng"] floatValue]);//纬度，经度
-                self.mapView.centerCoordinate = coords;
-                [self createAnnotation:dataArray];
-                self->playAllTime = dataArray.count/5.00;
-            }
-            
-        }else{
-            [Dialog showInfo:data[@"message"]];
-        }
-    }];
-    
-}
-
-- (void)createAnnotation:(NSArray*)dataArray
-{
+    // 读取数据
+    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sport_path" ofType:@"json"]];
+    NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     for (NSDictionary *dict in dataArray) {
         SportNode *node = [SportNode nodeWithDictionary:dict];
         [self.sportNodes addObject:node];
     }
+    playAllTime = dataArray.count/5.00;
     
     CLLocationCoordinate2D coors[self.sportNodes.count];
     for (NSInteger i = 0; i < self.sportNodes.count; i++) {
@@ -491,26 +429,6 @@ static NSString *annotationViewIdentifier = @"com.Baidu.BMKPointAnnotation";
     sportAnnotation.title = @"轨迹回放";
     [_mapView addAnnotation:sportAnnotation];
 }
-
-- (NSDate *)timeStrToDateStr:(NSString*)timeStr
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:8]];//解决8小时时间差问题
-    NSDate *date = [dateFormatter dateFromString:timeStr];
-    return date;
-}
-
-- (NSString *)timeIntervalWithStartDate:(NSDate *)start endDate:(NSDate *)end {
-    
-    NSTimeInterval time=[end timeIntervalSinceDate:start];
-    
-    //    int days=((int)time)/(3600*24);
-    //    int hours=((int)time)%(3600*24)/3600;
-    
-    return [[NSString alloc] initWithFormat:@"%f",time];
-}
-
 
 #pragma mark - action
 - (void)backAction
@@ -687,7 +605,7 @@ static NSString *annotationViewIdentifier = @"com.Baidu.BMKPointAnnotation";
 }
 - (IBAction)checkAction:(id)sender {
     [self.proSlider setValue:0];
-    [self getToken];
+    [self loadData];
     self.timeView.hidden = YES;
     self.playView.hidden = NO;
     self.startTimeShowLabel.text = self.startTimeLabel.text;

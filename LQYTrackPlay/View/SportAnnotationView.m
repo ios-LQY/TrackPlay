@@ -138,8 +138,8 @@
     [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
         self.annotation.coordinate = node_2.coordinate;
     } completion:^(BOOL finished) {
-        if (_animationState == 1) {
-            _currentIndex ++;
+        if (self->_animationState == 1) {
+            self->_currentIndex ++;
             [self running];
         }
     }];
