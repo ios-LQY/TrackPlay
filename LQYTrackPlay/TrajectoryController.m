@@ -7,7 +7,6 @@
 //
 
 #import "TrajectoryController.h"
-#import "API.h"
 #import "SportNode.h"
 #import "SportAnnotationView.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
@@ -20,7 +19,7 @@
 //屏幕宽高
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
-#define IMEI    @"868120217335055"
+
 //复用annotationView的指定唯一标识
 static NSString *annotationViewIdentifier = @"com.Baidu.BMKPointAnnotation";
 @interface TrajectoryController ()<BMKLocationManagerDelegate,BMKMapViewDelegate,BMKGeoCodeSearchDelegate,PGDatePickerDelegate>
@@ -401,7 +400,11 @@ static NSString *annotationViewIdentifier = @"com.Baidu.BMKPointAnnotation";
         SportNode *node = [SportNode nodeWithDictionary:dict];
         [self.sportNodes addObject:node];
     }
+    //播放时长：每秒播放5个数据点，可根据需要修改
     playAllTime = dataArray.count/5.00;
+    //设置起点为地图中心点
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake([dataArray[0][@"lat"] floatValue],[dataArray[0][@"lng"] floatValue]);//纬度，经度
+    _mapView.centerCoordinate = coords;
     
     CLLocationCoordinate2D coors[self.sportNodes.count];
     for (NSInteger i = 0; i < self.sportNodes.count; i++) {
